@@ -4,11 +4,8 @@ import m.idk.Timely.model.WorkSession;
 import m.idk.Timely.repository.WorkSessionRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 
 //service gets data from controller and passes it to DB
 @Service
@@ -46,7 +43,6 @@ private final WorkSessionRepository workSessionRepository;
 
         WorkSession toUpdate = workSessionRepository.getReferenceById(sessionId);
         toUpdate.setDuration(workSession.getDuration());
-        //toUpdate.setDuration(workSession.getEndDate().compareTo(workSession.getStartDate()));
         long duration = Math.abs(workSession.getEndDate().getTime() - session.getStartDate().getTime());
 
 

@@ -4,6 +4,7 @@ import m.idk.Timely.model.WorkSession;
 import m.idk.Timely.service.WorkSessionService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 //controller receives all http requests and passes them to service
 @RestController
@@ -18,7 +19,7 @@ public class WorkSessionController {
     //save
     @PostMapping("/workSession")
     public WorkSession saveWorkSession(
-            @RequestBody WorkSession workSession)
+           @Valid @RequestBody WorkSession workSession)
     {
         return workSessionService.saveWorkSession(workSession);
     }
@@ -49,7 +50,7 @@ public class WorkSessionController {
     }
 
     @DeleteMapping("/workSession/all")
-    public void deleteWorkSession(){
+    public void deleteWorkSessions(){
 
         workSessionService.deleteAllWorkSessions();
     }

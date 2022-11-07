@@ -2,8 +2,6 @@
 package m.idk.Timely.service;
 
 import m.idk.Timely.model.WorkSession;
-
-import java.util.Date;
 import java.util.List;
 
 public interface WorkSessionService {
